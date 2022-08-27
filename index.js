@@ -4,11 +4,10 @@ require('dotenv').config();
 
 const app = express();
 
+const subredditsRoutes = require("./routes/subreddit.js")
 
-app.get("/", (req, res) => {   
 
-    res.send("<h1> Prueba técnica Reddit </h1>")
-})
+app.use(subredditsRoutes)
 
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
