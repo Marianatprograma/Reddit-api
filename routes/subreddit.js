@@ -1,6 +1,8 @@
 const {Router} = require("express");
 const router = Router();
 
+const con  = require("../db/database");
+
 
 router.get("/", (req, res) => {
 
@@ -10,7 +12,16 @@ router.get("/", (req, res) => {
 
 router.get('/subreddits', (req, res) =>{    
 
-     res.send('servir datos')
+    con.promise().query("SELECT * FROM `Subreddits`")
+    .then( ([rows]) => {
+        
+        res.status(200).json(rows);
+
+    })
+    .catch((err) =>{
+        console.log()
+    })
+    .then( () => con.end()); 
 
 })
 
