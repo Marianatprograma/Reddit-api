@@ -3,6 +3,7 @@ const cors = require('cors');
 require('dotenv').config();
 require("./db/database");
 
+
 const app = express();
 
 const subredditsRoutes = require("./routes/subreddit.js")

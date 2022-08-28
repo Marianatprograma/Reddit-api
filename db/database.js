@@ -4,7 +4,7 @@ require('dotenv').config();
 const mysql = require('mysql2');
 
 
-const con = mysql.createConnection(
+const connection = mysql.createConnection(
     { 
         host:'sql10.freesqldatabase.com',
         user     : 'sql10515509',
@@ -13,4 +13,4 @@ const con = mysql.createConnection(
     }  
 );
  
-module.exports = con;
+module.exports = connection;
